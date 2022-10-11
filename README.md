@@ -1,2 +1,2 @@
 # Python
-Some bullshit from school... nothing special.
+Some stuff from school... nothing special.
