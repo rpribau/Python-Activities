@@ -101,8 +101,8 @@ def tableroparejas(n):
 n = 1
 while n == 1:
     n = int(input("Dame un numero solo (Solo pares) = "))
-    n = n%2
-    if n == 1:
+    nuevaN = n%2
+    if nuevaN == 1:
         print("Error, ingresa un numero PAR.")
 
 
