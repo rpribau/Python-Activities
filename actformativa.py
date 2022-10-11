@@ -3,8 +3,10 @@ import random as rnd
 
 """ 
 Cosas que faltan:
-- Falta integrar lo de dos jugadores
-- Poder elegir el tablero (en caso de poner numero impar marcar ERROR)
+- Falta integrar lo de dos jugadores 
+- Intentar cambiar los 0 por algun emoji (🎴)
+- Randomizar los numeros ✓✓
+- Poder elegir el tablero (en caso de poner numero impar marcar ERROR) ✓✓
 - Dormir...
 
 INSTRUCCIONES:
@@ -12,6 +14,7 @@ INSTRUCCIONES:
 Este memorama es en base de matrices utilizando la libreria de numpy para crear matrices de manera mas sencilla y la libreria random para poder asignar
 cada carta. 
     - Cada carta es representada por un numero.
+    - Una carta volteada es representada por un 0.
     - Solo tienes 3 oportunidades de fallar (al menos en este programa. A futuro se va cambiar debido a la implementación de dos jugadores.)
     - Los ceros que se muestran al iniciar el programa representan las cartas volteadas.
     Ejem:
@@ -74,7 +77,8 @@ Estado del juego:
 def tableroparejas(n):
     
     fichasUnicas = (n*n)//2
-    tablero = np.zeros(shape=(n,n),dtype =int)
+    tablero = np.zeros(shape=(n,n),dtype = int)
+
 
     i = 1
     while (i <= fichasUnicas):
@@ -97,7 +101,6 @@ def tableroparejas(n):
 
 
 
-#Modificar el tamaño del memorama (SOLO NUMEROS PARES)
 n = 1
 while n == 1:
     n = int(input("Dame un numero solo (Solo pares) = "))
@@ -111,7 +114,7 @@ tablero = tableroparejas(n)
 descubiertas = np.zeros(shape=(n,n),dtype=int)
 equivocado = 0
 encontrado = 0
-while (equivocado<3 and encontrado<(n*n)):
+while (equivocado<10 and encontrado<(n*n)):
     
     print("Estado del juego:")
     print(descubiertas)
