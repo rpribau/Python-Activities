@@ -88,7 +88,9 @@ def tableroparejas(n):
         while (tablero[filaUno,columnaUno]!=0):
             filaUno = int(rnd.random()*n)+0
             columnaUno = int(rnd.random()*n)+0
+
         tablero[filaUno,columnaUno] = i
+
         filaDos = int(rnd.random()*n)+0
         columnaDos = int(rnd.random()*n)+0
         
@@ -139,18 +141,18 @@ while (equivocado<10 and encontrado<(n*n)):
         descubiertas[filaUno,columnaUno] = ficha1
         descubiertas[filaDos,columnaDos] = ficha2
         encontrado = encontrado + 2
-        print('Haz encontrado una pareja! = ',ficha1,ficha2)
+        print("Haz encontrado una pareja! = ",ficha1,ficha2)
     else:
         equivocado = equivocado + 1
-        print('Las fichas son diferentes = ',ficha1,ficha2)
+        print("Las fichas son diferentes = ",ficha1,ficha2)
 
 #Main
-print("Solucion del tablero:")
+print("Solucion del tablero = ")
 print(tablero)
-print("Estado del juego:")
+print("Estado del juego = ")
 print(descubiertas)
 if encontrado==(n*n):
-    print("Muy bien..!! Encontraste todas las fichas. ")
+    print("Muy bien!! Encontraste todas las fichas. ")
 else:
-    print("Te haz equivocado tres veces... Fin del juego. ")
+    print("Te haz equivocado mucho... Fin del juego. ")
     print("Fichas descubiertas:", encontrado)
