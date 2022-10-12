@@ -46,30 +46,7 @@ Fila 8            [0 0 0 0 0 0 0 0 0 0]
 Fila 9            [0 0 0 0 0 0 0 0 0 0]]
 
 
-    - Cuando una carta sea distinta esto mostrara:
-
->   Fila de la ficha 1:0
->   Columna de la ficha 1:4
->   Fila de la ficha 2: 0
->   Columna de la ficha 2: 6
-
-Las fichas son diferentes =  31 7
-Estado del juego:
-[[0 0 0 0 0 0 0 0 0 0]
-Las fichas son diferentes =  30 46
-Estado del juego:
-[[0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0]]
-
- """
+"""
 
 
 def tableroparejas(n):
