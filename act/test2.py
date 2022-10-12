@@ -1,8 +1,8 @@
-cadena = input("Escribe un texto: ")
-letra = input("Escribe la letra que deseas conservar: ")
-def reemplazar(texto, letra):
-    for i in texto:
-        if i != letra:
-            texto = texto.replace(i,'*')
-    return texto
-print(reemplazar(cadena,letra))
+numeroUno = int(input("Dame un numero = "))
+numeroDos = int(input("Dame un numero = "))
+
+if numeroUno == numeroDos:
+    print("Son iguales")
+else:
+    print("Son diferentes")
+    

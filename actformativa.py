@@ -3,11 +3,10 @@ import random as rnd
 
 """ 
 Cosas que faltan:
-- Falta integrar lo de dos jugadores 
-- Intentar cambiar los 0 por algun emoji (🎴)
 - Randomizar los numeros ✓✓
+- Que no se repitan los numeros ✓✓
+- Que no se repitan las parejas ✓✓
 - Poder elegir el tablero (en caso de poner numero impar marcar ERROR) ✓✓
-- Dormir...
 
 INSTRUCCIONES:
 
@@ -73,9 +72,9 @@ Estado del juego:
  """
 
 
-
 def tableroparejas(n):
     
+    # Creamos una matriz de n x n
     fichasUnicas = (n*n)//2
     tablero = np.zeros(shape=(n,n),dtype = int)
 
@@ -99,19 +98,22 @@ def tableroparejas(n):
             columnaDos = int(rnd.random()*n)+0
         tablero[filaDos,columnaDos] = i
         i = i + 1
+        
     return(tablero)
+    
 
 
-
+#Esta funcion es para poder elegir el tamaño del tablero
 n = 1
 while n == 1:
     n = int(input("Dame un numero solo (Solo pares) = "))
-    nuevaN = n%2
-    if nuevaN == 1:
+    residuo = n%2
+    if residuo != 0:
         print("Error, ingresa un numero PAR.")
+        n = 1
+    
 
-
-#Tablero
+#Elegir las fichas
 tablero = tableroparejas(n)
 descubiertas = np.zeros(shape=(n,n),dtype=int)
 equivocado = 0
@@ -137,6 +139,7 @@ while (equivocado<10 and encontrado<(n*n)):
     ficha1 = tablero[filaUno,columnaUno]
     ficha2 = tablero[filaDos,columnaDos]
 
+#Si las fichas son iguales o diferentes
     if ficha1==ficha2:
         descubiertas[filaUno,columnaUno] = ficha1
         descubiertas[filaDos,columnaDos] = ficha2
@@ -146,7 +149,7 @@ while (equivocado<10 and encontrado<(n*n)):
         equivocado = equivocado + 1
         print("Las fichas son diferentes = ",ficha1,ficha2)
 
-#Main
+#Salida del juego
 print("Solucion del tablero = ")
 print(tablero)
 print("Estado del juego = ")
@@ -154,5 +157,5 @@ print(descubiertas)
 if encontrado==(n*n):
     print("Muy bien!! Encontraste todas las fichas. ")
 else:
-    print("Te haz equivocado mucho... Fin del juego. ")
+    print("Te has equivocado mucho... Fin del juego. ")
     print("Fichas descubiertas:", encontrado)
