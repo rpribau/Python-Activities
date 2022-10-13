@@ -49,15 +49,15 @@ Fila 9            [0 0 0 0 0 0 0 0 0 0]]
 """
 
 
-def tableroparejas(n):
+def tableropares(n):
     
     # Creamos una matriz de n x n
-    fichasUnicas = (n*n)//2
+    fichasUni = (n*n)//2
     tablero = np.zeros(shape=(n,n),dtype = int)
 
 
     i = 1
-    while (i <= fichasUnicas):
+    while (i <= fichasUni):
         filaUno = int(rnd.random()*n)+0
         columnaUno = int(rnd.random()*n)+0
         
@@ -91,7 +91,7 @@ while n == 1:
     
 
 #Elegir las fichas
-tablero = tableroparejas(n)
+tablero = tableropares(n)
 descubiertas = np.zeros(shape=(n,n),dtype=int)
 equivocado = 0
 encontrado = 0
